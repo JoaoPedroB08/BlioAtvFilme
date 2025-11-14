@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLIO Filmes</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para o arquivo JS (defer garante que o HTML seja lido primeiro) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Cabeçalho com o logo -->
+    <header>
+        <h1 class="logo">BLI<span class="logo-o">O</span></h1>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <h2 class="section-title">Filmes Populares</h2>
+        
+        <!-- Grid onde os filmes serão inseridos pelo JavaScript -->
+        <div id="movie-grid" class="movie-grid">
+            <!-- Exemplo de como um card será (será gerado pelo JS) -->
+            <!-- 
+            <div class="movie-card">
+                <img src="https://placehold.co/400x600/1a1a1a/fff?text=Filme" alt="Nome do Filme">
+                <div class="movie-info">
+                    <button class="rate-button">Avaliar</button>
+                </div>
+            </div> 
+            -->
+        </div>
+    </main>
+
+    <!-- Modal de Avaliação (inicialmente oculto) -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <!-- Botão de fechar o modal -->
+            <span id="modal-close" class="modal-close">&times;</span>
+
+            <div class="modal-body">
+                <!-- Lado Esquerdo: Detalhes do Filme -->
+                <div class="modal-left">
+                    <img id="modal-poster" src="" alt="Pôster do Filme">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-synopsis"></p>
+                </div>
+
+                <!-- Lado Direito: Avaliação e Comentários -->
+                <div class="modal-right">
+                    <h3>Deixe sua Avaliação</h3>
+                    <form id="rating-form">
+                        <div class="stars">
+                            <!-- Estrelas para clicar (a lógica fica no JS) -->
+                            <span data-value="1">&#9733;</span>
+                            <span data-value="2">&#9733;</span>
+                            <span data-value="3">&#9733;</span>
+                            <span data-value="4">&#9733;</span>
+                            <span data-value="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="rating-score" value="0">
+                        <textarea id="rating-comment" placeholder="Escreva seu comentário..." required></textarea>
+                        <button type="submit" class="button-purple">Enviar Avaliação</button>
+                    </form>
+
+                    <hr>
+
+                    <h3>Comentários</h3>
+                    <div id="comments-list" class="comments-list">
+                        <!-- Comentários serão inseridos aqui pelo JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

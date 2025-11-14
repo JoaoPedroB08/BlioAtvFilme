@@ -1,0 +1,226 @@
+/* Variáveis de Cor (Paleta) */
+:root {
+    --cor-fundo: #000000;
+    --cor-fundo-card: #1a1a1a;
+    --cor-fundo-input: #333333;
+    --cor-texto: #FFFFFF;
+    --cor-detalhe: #805AD5; /* Roxo */
+    --cor-estrela: #f39c12; /* Amarelo/Laranja para estrelas */
+}
+
+/* Reset Básico e Estilo do Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho e Logo */
+header {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-fundo-input);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logo-o {
+    color: var(--cor-detalhe);
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Grid de Filmes */
+.movie-grid {
+    display: grid;
+    /* Cria colunas responsivas: 
+       tenta preencher com 180px, mas pode crescer (1fr) */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* Card de Filme */
+.movie-card {
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Botão Roxo Padrão */
+.button-purple {
+    background-color: var(--cor-detalhe);
+    color: var(--cor-texto);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.button-purple:hover {
+    background-color: #6b46b1; /* Roxo mais escuro */
+}
+
+/* --- Estilos do Modal --- */
+
+/* Fundo escuro do modal */
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background-color: var(--cor-fundo-card);
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh; /* Altura máxima */
+    overflow-y: auto; /* Permite scroll se for muito alto */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Botão de Fechar */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--cor-texto);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+}
+
+/* Layout do Modal (Esquerda/Direita) */
+.modal-left {
+    flex: 1; /* Ocupa 1 parte */
+}
+.modal-right {
+    flex: 1.5; /* Ocupa 1.5 partes (mais largo) */
+}
+
+.modal-left img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.modal-left h2 {
+    font-size: 1.8rem;
+    color: var(--cor-detalhe);
+    margin-top: 10px;
+}
+
+.modal-left p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Formulário de Avaliação */
+.stars {
+    font-size: 2rem;
+    color: var(--cor-fundo-input);
+    cursor: pointer;
+}
+
+.stars span:hover,
+.stars span.active {
+    color: var(--cor-estrela);
+}
+
+#rating-form textarea {
+    width: 100%;
+    height: 80px;
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto);
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--cor-fundo-input);
+    margin: 20px 0;
+}
+
+/* Lista de Comentários */
+.comments-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.comment-item {
+    background-color: var(--cor-fundo-input);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment-item p {
+    margin: 0;
+}
+
+.comment-item .comment-score {
+    font-size: 0.9rem;
+    color: var(--cor-estrela);
+    font-weight: bold;
+}
+
+/* Classe utilitária para esconder */
+.hidden {
+    display: none;
+}
